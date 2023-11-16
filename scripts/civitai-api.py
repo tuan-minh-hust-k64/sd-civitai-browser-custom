@@ -152,7 +152,7 @@ def download_file_thread(url, file_name, content_type, use_new_folder, model_nam
                 os.makedirs(model_folder)
             
         else:
-            model_folder = os.path.join(folder,model_name.replace(" ","_").replace("(","").replace(")","").replace("|","").replace(":","-"))
+            model_folder = folder
             if not os.path.exists(model_folder):
                 os.makedirs(model_folder)
 
