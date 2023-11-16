@@ -417,8 +417,9 @@ def on_ui_tabs():
             list_versions = gr.Dropdown(label="Version", choices=[], interactive=True, elem_id="quicksettings", value=None)
         with gr.Row():
             txt_list = ""
+            txt_filename = "new_model"
             dummy = gr.Textbox(label='Trained Tags (if any)', value=f'{txt_list}', interactive=True, lines=1)
-            model_filename = gr.Dropdown(label="Model Filename", choices=[], interactive=True, value=None)
+            model_filename = gr.Textbox(label="Model Filename", value=f'{txt_filename}', interactive=True, lines=1)
             dl_url = gr.Textbox(label="Download Url", interactive=False, value=None)
         with gr.Row():
             update_info = gr.Button(value='1st - Get Model Info')
