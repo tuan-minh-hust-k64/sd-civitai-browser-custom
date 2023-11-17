@@ -157,11 +157,11 @@ def download_file_thread(url, file_name, content_type, use_new_folder, model_nam
                 os.makedirs(model_folder)
 
     path_to_new_file = os.path.join(model_folder, file_name)     
-
-    thread = threading.Thread(target=download_file, args=(url, path_to_new_file))
+    os.system("sh ./test.sh " + url + " " + file_name)
+    # thread = threading.Thread(target=download_file, args=(url, path_to_new_file))
 
         # Start the thread
-    thread.start()
+    # thread.start()
 
 def save_text_file(file_name, content_type, use_new_folder, trained_words, model_name):
     print("Save Text File Clicked")
@@ -417,9 +417,8 @@ def on_ui_tabs():
             list_versions = gr.Dropdown(label="Version", choices=[], interactive=True, elem_id="quicksettings", value=None)
         with gr.Row():
             txt_list = ""
-            txt_filename = "new_model"
             dummy = gr.Textbox(label='Trained Tags (if any)', value=f'{txt_list}', interactive=True, lines=1)
-            model_filename = gr.Textbox(label="Model Filename", value=f'{txt_filename}', interactive=True, lines=1)
+            model_filename = gr.Dropdown(label="Model Filename", choices=[], interactive=True, value=None)
             dl_url = gr.Textbox(label="Download Url", interactive=False, value=None)
         with gr.Row():
             update_info = gr.Button(value='1st - Get Model Info')
