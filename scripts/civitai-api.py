@@ -157,7 +157,7 @@ def download_file_thread(url, file_name, content_type, use_new_folder, model_nam
                 os.makedirs(model_folder)
 
     path_to_new_file = os.path.join(model_folder, file_name)     
-    os.system("sh ./test.sh " + url + " " + file_name)
+    os.system("sh ./script.sh " + url + " " + file_name)
     # thread = threading.Thread(target=download_file, args=(url, path_to_new_file))
 
         # Start the thread
